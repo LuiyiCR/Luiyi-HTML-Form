@@ -16,13 +16,20 @@
   </head>
   <body>
     <!-- Form -->
-    <form class="row m-5 border border-secondary rounded" novalidate>
+    <form class="row m-5 border border-secondary rounded" id="yourFormId">
       <!-- Header Column -->
       <div
         class="col-12 bg-secondary p-2 rounded-top mb-3 d-flex align-items-center"
         style="--bs-bg-opacity: 0.5"
       >
         <h2 class="">Payment Form</h2>
+      </div>
+
+      <!-- Alert! -->
+      <div class="col-12">
+        <div class="alert alert-danger" role="alert">
+          Some fields are missing!
+        </div>
       </div>
 
       <!-- Card Number Column -->
@@ -47,6 +54,7 @@
           id="inputCvcNumber"
           name="inputCvcNumber"
           placeholder="0000"
+          required
         />
       </div>
 
@@ -66,6 +74,7 @@
             id="inputAmount"
             aria-describedby="basic-addon3"
             placeholder="Amount"
+            required
           />
         </div>
       </div>
@@ -78,6 +87,7 @@
           class="form-control"
           id="inputFirstName"
           placeholder="Enter your First Name"
+          required
         />
       </div>
       <div class="col-6">
@@ -87,17 +97,18 @@
           class="form-control"
           id="inputLastName"
           placeholder="Enter your Last Name"
+          required
         />
       </div>
 
       <!-- City-State-Zip Columns -->
       <div class="col-md-6 mb-3">
         <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity" />
+        <input type="text" class="form-control" id="inputCity" required />
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
+        <select id="inputState" class="form-select" required>
           <option selected>Pick a state</option>
           <option>Florida</option>
           <option>California</option>
@@ -105,7 +116,7 @@
       </div>
       <div class="col-md-2">
         <label for="inputZip" class="form-label">Postal Code</label>
-        <input type="text" class="form-control" id="inputZip" />
+        <input type="text" class="form-control" id="inputZip" required />
       </div>
 
       <!-- Card Selection -->
@@ -114,51 +125,55 @@
           >We accept:</label
         >
         <div
-          class="d-lg-flex justify-content-center bg-secondary p-1 rounded overflow-hidden"
+          class="d-lg-flex justify-content-center align-items-center bg-secondary rounded overflow-hidden pt-1"
         >
-          <div class="form-check me-1">
+          <div class="form-check mx-2">
             <input
               class="form-check-input"
               type="radio"
               name="cardCheck"
               id="cardCheck"
+              required
             />
             <label class="form-check-label" for="cardCheck"
-              ><i class="fa-solid fa-money-bill-transfer"></i>
+              ><i class="fa-brands fa-cc-visa"></i>
             </label>
           </div>
 
-          <div class="form-check me-1">
+          <div class="form-check mx-2">
             <input
               class="form-check-input"
               type="radio"
               name="cardCheck"
               id="cardCheck1"
+              required
             />
             <label class="form-check-label" for="cardCheck"
-              ><i class="fa-solid fa-money-bill-transfer"></i>
+              ><i class="fa-brands fa-cc-mastercard"></i>
             </label>
           </div>
-          <div class="form-check me-1">
+          <div class="form-check mx-2">
             <input
               class="form-check-input"
               type="radio"
               name="cardCheck"
               id="cardCheck1"
+              required
             />
             <label class="form-check-label" for="cardCheck"
-              ><i class="fa-solid fa-money-bill-transfer"></i>
+              ><i class="fa-brands fa-cc-amex"></i>
             </label>
           </div>
-          <div class="form-check me-1">
+          <div class="form-check mx-2">
             <input
               class="form-check-input"
               type="radio"
               name="cardCheck"
               id="cardCheck1"
+              required
             />
             <label class="form-check-label" for="cardCheck"
-              ><i class="fa-solid fa-money-bill-transfer"></i>
+              ><i class="fa-brands fa-cc-jcb"></i>
             </label>
           </div>
         </div>
@@ -188,7 +203,13 @@
           <button class="btn btn-secondary btn-lg me-md-2" type="button">
             Cancel
           </button>
-          <button class="btn btn-primary btn-lg" type="button">Send</button>
+          <button
+            class="btn btn-primary btn-lg"
+            type="submit"
+            form="yourFormId"
+          >
+            Send
+          </button>
         </div>
       </div>
     </form>
