@@ -36,7 +36,7 @@
       <div class="col-md-4">
         <label for="cardNumber" class="form-label">Card #</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="cardNumber"
           name="cardNumber"
@@ -53,7 +53,8 @@
           class="form-control"
           id="inputCvcNumber"
           name="inputCvcNumber"
-          placeholder="0000"
+          placeholder="000"
+          maxlength="3"
           required
         />
       </div>
@@ -69,11 +70,12 @@
             >$</span
           >
           <input
-            type="text"
+            type="number"
             class="form-control"
             id="inputAmount"
             aria-describedby="basic-addon3"
             placeholder="Amount"
+            inputmode="numeric"
             required
           />
         </div>
@@ -116,7 +118,7 @@
       </div>
       <div class="col-md-2">
         <label for="inputZip" class="form-label">Postal Code</label>
-        <input type="text" class="form-control" id="inputZip" required />
+        <input type="number" class="form-control" id="inputZip" required />
       </div>
 
       <!-- Card Selection -->
@@ -132,10 +134,10 @@
               class="form-check-input"
               type="radio"
               name="cardCheck"
-              id="cardCheck"
+              id="cardCheckVisa"
               required
             />
-            <label class="form-check-label" for="cardCheck"
+            <label class="form-check-label" for="cardCheckVisa"
               ><i class="fa-brands fa-cc-visa"></i>
             </label>
           </div>
@@ -145,10 +147,10 @@
               class="form-check-input"
               type="radio"
               name="cardCheck"
-              id="cardCheck1"
+              id="cardCheckMaster"
               required
             />
-            <label class="form-check-label" for="cardCheck"
+            <label class="form-check-label" for="cardCheckMaster"
               ><i class="fa-brands fa-cc-mastercard"></i>
             </label>
           </div>
@@ -157,10 +159,10 @@
               class="form-check-input"
               type="radio"
               name="cardCheck"
-              id="cardCheck1"
+              id="cardCheckAmex"
               required
             />
-            <label class="form-check-label" for="cardCheck"
+            <label class="form-check-label" for="cardCheckAmex"
               ><i class="fa-brands fa-cc-amex"></i>
             </label>
           </div>
@@ -169,10 +171,10 @@
               class="form-check-input"
               type="radio"
               name="cardCheck"
-              id="cardCheck1"
+              id="cardCheckJBC"
               required
             />
-            <label class="form-check-label" for="cardCheck"
+            <label class="form-check-label" for="cardCheckJBC"
               ><i class="fa-brands fa-cc-jcb"></i>
             </label>
           </div>
